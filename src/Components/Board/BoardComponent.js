@@ -7,10 +7,9 @@ const BoardComponent = ({ onClick, squares }) => {
 
         squares.forEach((value, i) => {
             squareArr.push(
-                <SquareComponent key={i} onClick={onClick} value={value}/>
+                <SquareComponent key={i} onClick={() => onClick(i)} value={value}/>
             )
         })
-
         return squareArr
     }
 
