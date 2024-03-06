@@ -18,9 +18,9 @@ const BoardComponent = ({ onClick, squares }) => {
   return (
     <div className='board'>
       <div className='boardRow'>
-        {renderSquares().slice(0, 3)}
-        {renderSquares().slice(3, 6)}
-        {renderSquares().slice(6, 9)}
+        <div>{renderSquares().slice(0, 3)}</div>
+        <div>{renderSquares().slice(3, 6)}</div>
+        <div>{renderSquares().slice(6, 9)}</div>
       </div>
     </div>
   )
