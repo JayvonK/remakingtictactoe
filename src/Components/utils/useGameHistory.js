@@ -5,4 +5,31 @@
 //We need the update history function to take in a parameter, then set the array we created to that parameter, and also set the number we created to the parameter's length minus 1
 //We need the reset history function to reset the array and integer to it's original values
 
+import React, { useState } from 'react'
+
+const useGameHistory = () => {
+    const [history, setHistory] = useState(Array(9).fill(null));
+
+    const [stepNumber, setStepNumber] = useState(0);
+
+    const updateHistory = (newHistory) => {
+        setHistory(newHistory);
+        setStepNumber(newHistory.length - 1);
+    }
+
+    const resetHistory = () => {
+        setHistory(Array(9).fill(null));
+        setStepNumber(0);
+    }
+
+  return {
+    history,
+    stepNumber,
+    setStepNumber,
+    resetHistory,
+    updateHistory
+  }
+}
+
+export default useGameHistory
 
